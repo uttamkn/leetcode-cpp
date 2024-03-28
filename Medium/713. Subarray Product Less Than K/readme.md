@@ -24,3 +24,7 @@ Output: 0
 - 1 <= nums.length <= 3 * 10^4
 - 1 <= nums[i] <= 1000
 - 0 <= k <= 10^6
+
+## Sliding window
+
+[A mental model of sliding window algorithm](https://youtu.be/MK-NZ4hN7rs?si=hQnlmpK1JTsp1IZm)
