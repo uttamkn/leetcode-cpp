@@ -1,26 +1,36 @@
 class Solution {
 public:
-    int numSubarraysWithSum(vector<int>& nums, int goal) {
-        int i = 0, count = 0, res = 0;
-        for (int j = 0; j < nums.size(); ++j) {
-            if (nums[j] == 1) {
-                goal--;
-                count = 0;
+    int numSubarraysWithSumAtMostK(vector<int>& nums, int goal) {
+        int n=nums.size();
+        int start=0;
+        int sum=0;
+        int count=0;
+        for(int end=0;end<n;end++){
+            sum+=nums[end];
+            while(start<=end && sum>goal){
+                sum=sum-nums[start];
+                start++;
             }
-            
-            while (goal == 0 && i <= j) {
-                goal += nums[i];
-                i++;
-                count++;
-            }
-            
-            while (goal < 0) {
-                goal += nums[i];
-                i++;
-            }
-            
-            res += count;
+            count=count+(end-start+1);
         }
-        return res;
+        return count;
     }
+
+    int numSubarraysWithSum(vector<int>& nums, int goal) {
+        return numSubarraysWithSumAtMostK(nums, goal) - numSubarraysWithSumAtMostK(nums, goal-1); 
+        }
 };
+
+//Brute Solution
+
+  // int n=nums.size();
+        // int c=0;
+        // int count=0;
+        // for(int i=0;i<n;i++){
+        //     int sum=nums[i];
+        //     for(int j=i+1;j<=n;j++){
+        //         if(sum==goal) count++;
+        //         sum+=nums[j];
+        //     }
+        // }
+        // return count;

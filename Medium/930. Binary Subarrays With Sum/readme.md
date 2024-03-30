@@ -40,3 +40,9 @@ Output:
 - 1 <= nums.length <= 3 * 10^4
 - nums[i] is either 0 or 1.
 - 0 <= goal <= nums.length
+
+## For questions like these (finding the number of subarray with exact < something >)
+
+- number of subarrays with exact < something > = number of subarrays with atmost < something > - number of subarrays with atmost < something - 1 >
+- in this case find the difference between subarrays with atmost sum `goal` - subarrays with atmost sum `goal-1`
+- similar to question 992
