@@ -29,3 +29,7 @@ Output: [0,0,9,0,0]
 ## Follow up
 
 Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.)
+
+## Explanation
+
+[yt](https://youtu.be/5bS636lE_R0?si=4MM9ayZpFRAz2YFq)
