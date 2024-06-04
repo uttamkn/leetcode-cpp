@@ -5,7 +5,6 @@ public:
         if (n < 3) return false;
         int first = INT_MAX, second = INT_MAX;
         for (int i = 0; i < n; i++) {
-            if (first < second && nums[i] > second) return true;
             if (nums[i] <= first) {
                 first = nums[i];
             } else if (nums[i] <= second){
