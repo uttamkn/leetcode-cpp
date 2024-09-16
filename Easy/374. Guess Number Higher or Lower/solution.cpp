@@ -14,7 +14,8 @@ public:
     int low = 0, high = n - 1;
     long mid;
     while (low <= high) {
-      mid = low + (high - low) / 2; // to avoid integer overflow
+      // math trick to avoid integer overflow while calculating mid
+      mid = low + (high - low) / 2;
       if (guess(mid + 1) == 0)
         return mid + 1;
       else if (guess(mid + 1) == -1) {
