@@ -12,24 +12,35 @@ struct TreeNode {
 };
 
 class Solution {
-  int max = 0;
-
 public:
   int maxdepth(TreeNode *root) {
-    traversal(root, 0);
-    return max;
-  }
-
-private:
-  void traversal(TreeNode *root, int cur) {
     if (!root)
-      return;
-    cur++;
-    traversal(root->left, cur);
-    traversal(root->right, cur);
-    max = (cur > max) ? cur : max;
+      return 0;
+    int leftHeight = maxdepth(root->left);
+    int rightHeight = maxdepth(root->right);
+    return 1 + max(leftHeight, rightHeight);
   }
 };
+
+// class Solution {
+//   int max = 0;
+
+// public:
+//   int maxdepth(TreeNode *root) {
+//     traversal(root, 0);
+//     return max;
+//   }
+
+// private:
+//   void traversal(TreeNode *root, int cur) {
+//     if (!root)
+//       return;
+//     cur++;
+//     traversal(root->left, cur);
+//     traversal(root->right, cur);
+//     max = (cur > max) ? cur : max;
+//   }
+// };
 
 int main() {
   Solution sol;
