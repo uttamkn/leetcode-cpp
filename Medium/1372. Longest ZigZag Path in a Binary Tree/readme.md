@@ -1,9 +1,5 @@
 # 1372. Longest ZigZag Path in a Binary Tree
 
-**Difficulty:** Medium  
-**Topics:** Binary Tree  
-**Companies:** -
-
 ## Problem Statement
 
 You are given the root of a binary tree.
