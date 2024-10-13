@@ -18,27 +18,25 @@ public:
       return {};
 
     queue<TreeNode *> q;
-    vector<int> rightView;
     q.push(root);
-    rightView.push_back(root->val);
+    vector<int> rightView;
 
     while (!q.empty()) {
-      TreeNode *currNode = q.front();
-      int rightmostEle =
-          101; // no val is above 100 according to the constraints
-      if (currNode->left) {
-        rightmostEle = currNode->left->val;
-        q.push(currNode->left);
-      }
+      int n = q.size();
+      int val;
 
-      if (currNode->right) {
-        rightmostEle = currNode->right->val;
-        q.push(currNode->right);
-      }
+      for (int i = 0; i < n; ++i) {
+        TreeNode *currNode = q.front();
+        q.pop();
+        val = currNode->val;
 
-      q.pop();
-      if (rightmostEle != 101)
-        rightView.push_back(rightmostEle);
+        if (currNode->left)
+          q.push(currNode->left);
+
+        if (currNode->right)
+          q.push(currNode->right);
+      }
+      rightView.push_back(val);
     }
 
     return rightView;
