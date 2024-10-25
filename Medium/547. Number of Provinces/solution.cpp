@@ -4,25 +4,17 @@ using namespace std;
 class Solution {
 public:
   int findCircleNum(vector<vector<int>> &isConnected) {
-    vector<int> visited(isConnected.size());
-    int numOfProvinces = 0;
+    vector<int> visited(isConnected.size(), 0);
+    int numOfProvinces = 1;
 
-    while (true) {
-      int i;
+    dfs(0, visited, isConnected);
 
-      for (i = 0; i < visited.size(); ++i) {
-        if (visited[i] == 0) {
-          dfs(i, visited, isConnected);
-          break;
-        }
+    for (int i = 0; i < visited.size(); ++i) {
+      if (visited[i] == 0) {
+        numOfProvinces++;
+        dfs(i, visited, isConnected);
       }
-
-      if (i == visited.size())
-        break;
-
-      numOfProvinces++;
     }
-
     return numOfProvinces;
   }
 
