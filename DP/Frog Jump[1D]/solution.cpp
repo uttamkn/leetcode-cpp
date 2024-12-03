@@ -47,3 +47,10 @@ int frogJump(int n, vector<int> &heights) {
   }
   return cur;
 }
+
+int main() {
+  int n = 4;
+  vector<int> heights({10, 20, 30, 10});
+  cout << frogJump(n, heights) << endl;
+  return 0;
+}
