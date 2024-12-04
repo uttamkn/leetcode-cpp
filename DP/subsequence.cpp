@@ -3,6 +3,7 @@
 // find the subsequence of a given array
 // each element can be picked or not picked
 // Time complexity: O(2^n) there are 2^n possible subsequence of a given array
+// https://youtu.be/AxNNVECce8c?si=Ow8yLDIzCvZRJFmr
 
 void print_subseq(int i, const std::vector<int> &vec,
                   std::vector<int> &subseq) {
