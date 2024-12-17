@@ -280,3 +280,16 @@
   ```cpp
   std::iota(vec.begin(), vec.end(), 1);
   ```
+
+#### Backtracking
+
+General Steps:
+1. Check the current cell:
+        Is it out of bounds?
+        Is it a wall?
+        Is it already visited?
+2. If it’s the end position, return the current path/cost.
+3. Mark the cell as visited.
+4. Explore all possible moves (up, down, left, right):
+5. Recursively move to the next cell.
+6. Unmark the cell as unvisited after exploring to allow other paths.
