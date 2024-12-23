@@ -12,6 +12,9 @@ using namespace std;
 #define rall(x) (x).rbegin(), (x).rend()
 
 
+#define rep(i, a, b) for (int i = a; i < b; ++i)
+#define rrep(i, a, b) for (int i = a; i >= b; --i)
+
 #define gcd(a, b) __gcd(a, b)
 #define lcm(a, b) ((a) / gcd(a, b) * (b))
 #define ceil(a, b) ((a + b - 1) / b)
