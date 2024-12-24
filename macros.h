@@ -29,7 +29,3 @@ using namespace std;
 #define imin INT_MIN
 #define imax INT_MAX
 #define bankai cout << "Katen Kyokotsu Karamatsu Shinjuu" << endl;
-
-int main() {
-  fast_io;
-}
