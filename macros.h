@@ -2,7 +2,6 @@
 using namespace std;
 
 #define fast_io ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-#define endl '\n'
 
 #define dbg(x) cerr << #x << " = " << x << endl;
 #define dbg_vec(v) cerr << #v << " = "; for (auto x : v) cerr << x << " "; cerr << endl;
