@@ -28,3 +28,15 @@ using namespace std;
 #define imin INT_MIN
 #define imax INT_MAX
 #define bankai cout << "Katen Kyokotsu Karamatsu Shinjuu" << endl;
+
+struct vectorHash {
+  size_t operator()(const vector<int> &v) const {
+    hash<int> int_hash;
+    size_t seed = v.size();
+    for (int i : v) {
+      seed ^= int_hash(i) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+    }
+    return seed;
+  }
+};
+
